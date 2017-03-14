@@ -76,7 +76,6 @@ public class SignificantDate {
 
     // todo: create a New Years Eve property
     public static final MonthDay NEW_YEARS_EVE = MonthDay.of(Month.DECEMBER, 31);
-    public static final MonthDay MY_BIRTHDAY = MonthDay.of(Month.JANUARY, 7);
 
     /**
      * The next() method returns a LocalDate object that represents the date of

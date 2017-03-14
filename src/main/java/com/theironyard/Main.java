@@ -58,25 +58,31 @@ public class Main {
          */
 
         // todo: create a new DateTimeFormatter in a variable named formatter
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
 
         // todo: print the number of days to and the date of the next occurrence of a constant date defined in SignificantDate (other than leap year). EG: Valentines Day
-        String answer1 = "There are " + SignificantDate.daysTo(SignificantDate.CHRISTMAS) + " days until the next occurrence of Christmas on " + SignificantDate.next(SignificantDate.CHRISTMAS).format(formatter);
-        LocalDate daysToChristmas = LocalDate.parse(answer1, formatter);
-        System.out.println(daysToChristmas);
-        //System.out.printf("There are %s days until the next occurrence of Christmas on %s\n",SignificantDate.daysTo(SignificantDate.CHRISTMAS),SignificantDate.next(SignificantDate.CHRISTMAS));
+        //String answer1 = "There are " + SignificantDate.daysTo(SignificantDate.CHRISTMAS) + " days until the next occurrence of Christmas on " + SignificantDate.next(SignificantDate.CHRISTMAS).format(formatter);
+        //LocalDate daysToChristmas = LocalDate.parse(answer1, formatter);
+        //System.out.println(daysToChristmas);
+        System.out.printf("There are %s days until the next occurrence of Christmas on %s\n",
+                (SignificantDate.daysTo(SignificantDate.CHRISTMAS)),
+                formatter.format(SignificantDate.next(SignificantDate.CHRISTMAS)));
 
         // todo: print the number of days to and date of the next occurrence of leap year
-        String answer2 = "There are " + SignificantDate.daysTo(SignificantDate.LEAP_YEAR) + " days until the next occurrence of Leap year on " + SignificantDate.next(SignificantDate.LEAP_YEAR).format(formatter);
-        LocalDate daysToLeapYear = LocalDate.parse(answer2, formatter);
-        System.out.println(daysToLeapYear);
-        //System.out.printf("There are %s days until the next occurrence of Leap Year on %s\n",SignificantDate.daysTo(SignificantDate.LEAP_YEAR),SignificantDate.next(SignificantDate.LEAP_YEAR));
+        //String answer2 = "There are " + SignificantDate.daysTo(SignificantDate.LEAP_YEAR) + " days until the next occurrence of Leap year on " + SignificantDate.next(SignificantDate.LEAP_YEAR).format(formatter);
+        //LocalDate daysToLeapYear = LocalDate.parse(answer2, formatter);
+        //System.out.println(daysToLeapYear);
+        System.out.printf("There are %s days until the next occurrence of Leap Year on %s\n",
+                SignificantDate.daysTo(SignificantDate.LEAP_YEAR),
+                formatter.format(SignificantDate.next(SignificantDate.LEAP_YEAR)));
 
         // todo: print the number of days to and date of any arbitrary MonthDate that is not defined as a constant in SignificantDate. EG: your birthday
-        String answer3 = "There are " + SignificantDate.daysTo(SignificantDate.MY_BIRTHDAY) + " days until the next occurrence of my birthday on " + SignificantDate.next(SignificantDate.MY_BIRTHDAY).format(formatter);
-        LocalDate daysToMyBirthday = LocalDate.parse(answer3, formatter);
-        System.out.println(daysToMyBirthday);
-        //System.out.printf("There are %s days until the next occurrence of my birthday on %s\n",SignificantDate.daysTo(SignificantDate.MY_BIRTHDAY),SignificantDate.next(SignificantDate.MY_BIRTHDAY));
+        //String answer3 = "There are " + SignificantDate.daysTo(SignificantDate.MY_BIRTHDAY) + " days until the next occurrence of my birthday on " + SignificantDate.next(SignificantDate.MY_BIRTHDAY).format(formatter);
+        //LocalDate daysToMyBirthday = LocalDate.parse(answer3, formatter);
+        //System.out.println(daysToMyBirthday);
+        System.out.printf("There are %s days until the next occurrence of my birthday on %s\n",
+                SignificantDate.daysTo(MonthDay.of(Month.JANUARY, 7)),
+                formatter.format(SignificantDate.next(MonthDay.of(Month.JANUARY, 7))));
 
     }
 
